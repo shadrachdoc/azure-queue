@@ -21,18 +21,18 @@ spec:
           runAsUser: 0
         env:
         - name: AzureWebJobsStorage
-          value: "DefaultEndpointsProtocol=https;AccountName=mypro543;AccountKey=ShPeD3l6TpeJjjgymn2p8l/ITolLrF6wFGNnD4AGwPv66aNlHnkN5SExUbYguAy0xKyz0R6P2HOP+AStX6nDMg==;EndpointSuffix=core.windows.net"
+          value: "DefaultEndpointsProtocol=https;AccountName=mypro543;AccountKey=EOsReWtTxbt3hIzQLfBr8/UqcEVV0c3Z/Xfehmr4G72G9V42rGnRFEy6VAFu436m7pFjE8gMAjbb+AStNA6zgw==;EndpointSuffix=core.windows.net"
         - name: AzureWebJobsDashboard
-          value: "DefaultEndpointsProtocol=https;AccountName=mypro543;AccountKey=ShPeD3l6TpeJjjgymn2p8l/ITolLrF6wFGNnD4AGwPv66aNlHnkN5SExUbYguAy0xKyz0R6P2HOP+AStX6nDMg==;EndpointSuffix=core.windows.net"
+          value: "DefaultEndpointsProtocol=https;AccountName=mypro543;AccountKey=EOsReWtTxbt3hIzQLfBr8/UqcEVV0c3Z/Xfehmr4G72G9V42rGnRFEy6VAFu436m7pFjE8gMAjbb+AStNA6zgw==;EndpointSuffix=core.windows.net"
       - name: worker-2
         image: mypro543.azurecr.io/load-msg:8
         securityContext:
           runAsUser: 0
         env:
         - name: AzureWebJobsStorage
-          value: "DefaultEndpointsProtocol=https;AccountName=mypro543;AccountKey=ShPeD3l6TpeJjjgymn2p8l/ITolLrF6wFGNnD4AGwPv66aNlHnkN5SExUbYguAy0xKyz0R6P2HOP+AStX6nDMg==;EndpointSuffix=core.windows.net"
+          value: "DefaultEndpointsProtocol=https;AccountName=mypro543;AccountKey=EOsReWtTxbt3hIzQLfBr8/UqcEVV0c3Z/Xfehmr4G72G9V42rGnRFEy6VAFu436m7pFjE8gMAjbb+AStNA6zgw==;EndpointSuffix=core.windows.net"
         - name: AzureWebJobsDashboard
-          value: "DefaultEndpointsProtocol=https;AccountName=mypro543;AccountKey=ShPeD3l6TpeJjjgymn2p8l/ITolLrF6wFGNnD4AGwPv66aNlHnkN5SExUbYguAy0xKyz0R6P2HOP+AStX6nDMg==;EndpointSuffix=core.windows.net"
+          value: "DefaultEndpointsProtocol=https;AccountName=mypro543;AccountKey=EOsReWtTxbt3hIzQLfBr8/UqcEVV0c3Z/Xfehmr4G72G9V42rGnRFEy6VAFu436m7pFjE8gMAjbb+AStNA6zgw==;EndpointSuffix=core.windows.net"
 ---
 apiVersion: v1
 kind: Service

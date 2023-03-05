@@ -35,8 +35,7 @@ stages:
         repository: $(imageRepository)
         dockerfile: $(dockerfilePath)
         containerRegistry: $(dockerRegistryServiceConnection)
-        tags: |
-          $(tag)
+        tags: latest
     - upload: manifests
       artifact: manifests
 
@@ -47,8 +46,7 @@ stages:
         repository: $(imageRepositoryR)
         dockerfile: $(dockerfilePathR)
         containerRegistry: $(dockerRegistryServiceConnection)
-        tags: |
-          $(tag)
+        tags: latest
 - stage: Development
   displayName: Deploy to dev
   dependsOn: Build

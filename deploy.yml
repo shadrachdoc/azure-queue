@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-function-app
+  labels:
+    app: my-function-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: my-function-app
+  template:
+    metadata:
+      labels:
+        app: my-function-app
+    spec:
+      containers:
+      - name: worker-1
+        image: mypro543.azurecr.io/sending-msg:1
+        env:
+        - name: AzureWebJobsStorage
+          value: "DefaultEndpointsProtocol=https;AccountName=mypro536;AccountKey=nkE0MAAyNDhV6aEku6Uhe9rlMBXfk6pXwDh5knmr6d5a8k3b5YpuQcOEV6OVxwc0aVxzv9iaX9CP+AStYc9u4w==;EndpointSuffix=core.windows.net"
+        - name: AzureWebJobsDashboard
+          value: "DefaultEndpointsProtocol=https;AccountName=mypro536;AccountKey=nkE0MAAyNDhV6aEku6Uhe9rlMBXfk6pXwDh5knmr6d5a8k3b5YpuQcOEV6OVxwc0aVxzv9iaX9CP+AStYc9u4w==;EndpointSuffix=core.windows.net"
+      - name: worker-2
+        image: mypro543.azurecr.io/load-msg:1
+        env:
+        - name: AzureWebJobsStorage
+          value: "DefaultEndpointsProtocol=https;AccountName=mypro536;AccountKey=nkE0MAAyNDhV6aEku6Uhe9rlMBXfk6pXwDh5knmr6d5a8k3b5YpuQcOEV6OVxwc0aVxzv9iaX9CP+AStYc9u4w==;EndpointSuffix=core.windows.net"
+        - name: AzureWebJobsDashboard
+          value: "DefaultEndpointsProtocol=https;AccountName=mypro536;AccountKey=nkE0MAAyNDhV6aEku6Uhe9rlMBXfk6pXwDh5knmr6d5a8k3b5YpuQcOEV6OVxwc0aVxzv9iaX9CP+AStYc9u4w==;EndpointSuffix=core.windows.net"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-function-app
+spec:
+  selector:
+    app: my-function-app
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
